@@ -89,28 +89,25 @@ section h2 {
 }
 
 /* Profile */
-.profile_table {
-    width: 100%;
-    font-size: 24px;
-    color: #000;
-    border-collapse: collapse;
+/* Profile (文章形式のスタイル) */
+.profile-content {
+     max-width: 800px; /* 文章が横に長くなりすぎないように幅を制限 */
+    margin: 0 auto; /* 中央寄せ */
+    text-align: left; /* テキストは左寄せ */
+    line-height: 1.8; /* 行間を少し広げて読みやすく */
 }
 
-.profile_table th,
-.profile_table td {
-    padding: 20px 15px;
-    border-bottom: 1px solid #eee;
-    text-align: left;
-}
-
-.profile_table th {
-    width: 30%;
+.profile-greeting {
+    font-size: 22px; /* 最初の挨拶を少し大きく */
     font-weight: bold;
-    background-color: #f8f9fa;
+    text-align: center; /* 挨拶だけ中央寄せにしてもOK */
+    margin-bottom: 25px;
 }
 
-.profile_table td {
-    width: 70%;
+.profile-text {
+    font-size: 18px; /* 本文のフォントサイズ */
+    color: #333; /* 文字色 */
+    margin-bottom: 20px; /* 段落ごとの間隔 */
 }
 
 /* Skills */
