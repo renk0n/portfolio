@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/* タブレットサイズ以下の調整 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .header {
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .header-logo {
+        max-height: 40px;
+    }
+
+    .header-right {
+        gap: 20px;
+    }
+
+    .top-title {
+        font-size: 36px;
+    }
+
+    .profile_table {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .profile_table th,
+    .profile_table td {
+        padding: 12px 8px;
+    }
+
+    .skills-card-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-card-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .products-image {
+        max-width: 100%;
+        max-height: 200px;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .contact-link {
+        width: 200px;
+        justify-content: center;
+    }
+}
+
+/* スマートフォンサイズ以下の調整 */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .header-right {
+        gap: 15px;
+    }
+
+    .header-right a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .top-title {
+        font-size: 28px;
+    }
+
+    .profile_table {
+        font-size: 14px;
+    }
+
+    .profile_table th {
+        width: 30%;
+        min-width: 80px;
+    }
+
+    .skills-card-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-image {
+        max-height: 60px;
+    }
+
+    .skills-title {
+        font-size: 14px;
+    }
+
+    .products-title {
+        font-size: 18px;
+    }
+
+    .products-text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .products-image {
+        max-width: 100%;
+        max-height: 180px;
+    }
+    
+    .contact-text {
+        font-size: 16px;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+/* 極小画面サイズの調整 */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .header-right {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .header-right a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .top-title {
+        font-size: 24px;
+    }
+
+    .profile_table th,
+    .profile_table td {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+
+    .skills-title {
+        font-size: 12px;
+    }
+
+    .products-title {
+        font-size: 16px;
+    }
+
+    .products-text {
+        font-size: 12px;
+    }
+}
