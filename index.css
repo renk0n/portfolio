@@ -24,21 +24,39 @@ body {
 
 /* Header */
 .header {
-    height: 56px;
     width: 100%;
-    box-shadow: 0 0 10px #ddd;
-    background-color: #242424;
+    height: 70px;
+    /* 少し高さを出して高級感を出す */
     position: fixed;
     top: 0;
     z-index: 1000;
+
+    /* 👇 ここがガラスの魔法 */
+    background-color: rgba(15, 15, 15, 0.1);
+    /* 限りなく透明に近い黒 */
+
+    /* 背景をぼかす（これがリキッド感の正体） */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    /* iPhone/Safari用 */
+
+    /* ガラスの縁（エッジ）を表現 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* ほんのり影を落として浮遊感を出す */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* コンテナの設定（配置用なのでそのまま） */
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    padding: 0 20px;
+    /* 左右に少し隙間を空ける */
 }
+
 
 .header-logo-text {
     font-size: 28px;
@@ -74,17 +92,16 @@ body {
 
 .header-right a {
     line-height: 25px;
-    color: #e2f1ff;
+    color: #5af2fd;
     font-size: 16px;
     padding: 16px 5px;
     text-decoration: none;
     transition: background-color 0.3s;
 }
 
-.header-right a:hover,
-.header-right a.active {
-    background-color: #e2f1ff;
-    color: #000;
+.header-right a:hover {
+    text-shadow: 0 0 20px#5af2fd;
+    color: #ffffff;
 }
 
 .header.scrolled {
@@ -94,7 +111,7 @@ body {
 
 /* Main Visual */
 .main-visual {
-    padding: 280px 0 200px;
+    padding: 100px 0 50px;
     background: linear-gradient(rgba(49, 49, 49, 0.7), rgba(49, 49, 49, 0.3)),
         url("image/スクリーンショット\ 2024-11-18\ 003417.png");
     background-size: cover;
@@ -127,117 +144,250 @@ section h2 {
 }
 
 /* Profile */
-/* Profile: サイバー・ステータス表 */
+/* Profile: タブ切り替えシステム（一体型・完全版） */
 
-/* 表全体を囲むカード */
-.status-card {
-    max-width: 700px;
-    margin: 0 auto;
-    background: rgba(10, 10, 10, 0.8);
-    /* 半透明の黒 */
-    border: 1px solid #333;
-    border-top: 2px solid #5af2fd;
-    /* 上だけ水色のアクセント */
-    box-shadow: 0 0 20px rgba(90, 242, 253, 0.1);
-    backdrop-filter: blur(5px);
+/* タブボタンを並べるエリア */
+.tab-menu {
+    display: flex;
+    justify-content: flex-start;
+    /* 左寄せ（インデックス風） */
+    gap: 5px;
+    /* タブ同士の隙間は少しだけ */
+    margin-bottom: 0;
+    /* 下の隙間をゼロにする（これでくっつける！） */
+    padding-left: 20px;
+    /* 左端に少し余裕を持たせる */
+    position: relative;
+    z-index: 1;
+    /* 線の上に重ねるために必要 */
+    top: 1px;
+    /* 1pxだけ下にずらして、下の線に重ねる */
 }
 
-/* カードの上部（飾り） */
-.card-header {
+/* タブボタンのデザイン（未選択時） */
+.tab-btn {
+    background: rgba(5, 5, 5, 0.8);
+    /* 背景より少し暗く */
+    color: #555;
+    /* 暗めの文字 */
+
+    border: 1px solid #333;
+    /* 暗い枠線 */
+    border-bottom: none;
+    /* 下の線は、パネルの線に任せる */
+
+    padding: 10px 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    /* 👇 ここが重要！上だけ丸くする */
+    border-radius: 10px 10px 0 0;
+
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* マウスを乗せた時 */
+.tab-btn:hover {
+    background: rgba(20, 20, 20, 0.8);
+    color: #5af2fd;
+    text-shadow: 0 0 5px #5af2fd;
+}
+
+/* 選択されている（アクティブな）タブ */
+.tab-btn.active {
+    background: rgba(10, 10, 10, 0.9);
+    /* パネルと同じ色にする！ */
+    color: #5af2fd;
+    /* 水色ネオン */
+    font-weight: bold;
+
+    /* 水色の枠線をつける */
+    border: 1px solid #5af2fd;
+
+    /* 👇 これが「つながる」魔法！下の線を透明にする */
+    border-bottom: 1px solid rgba(10, 10, 10, 0.9);
+
+    /* ほんのり光らせる */
+    box-shadow: 0 -5px 10px rgba(90, 242, 253, 0.1);
+
+    z-index: 2;
+    /* 他の線より手前に表示して「隠す」 */
+}
+
+/* コンテンツエリアの枠 */
+.tab-content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 400px;
+    position: relative;
+    /* 位置の基準 */
+}
+
+/* パネル本体（共通設定） */
+.dashboard-panel {
+    background: rgba(10, 10, 10, 0.9);
+    /* タブと同じ色 */
+
+    /* 全体を水色の枠で囲む */
+    border: 1px solid #5af2fd;
+
+    /* 左上の角だけ直角にする（タブとつながるため） */
+    border-radius: 0 10px 10px 10px;
+
+    padding: 40px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(90, 242, 253, 0.15);
+}
+
+/* --- タブ切り替えの仕組み (前回と同じ) --- */
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- 中身の装飾 (前回と同じ) --- */
+.panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background: rgba(90, 242, 253, 0.1);
-    /* 薄い水色背景 */
+    margin-bottom: 30px;
     border-bottom: 1px solid #333;
+    padding-bottom: 10px;
 }
 
-.header-title {
-    font-size: 12px;
-    letter-spacing: 2px;
+.panel-title {
+    font-family: 'Orbitron', sans-serif;
     color: #5af2fd;
+    font-size: 16px;
+    letter-spacing: 2px;
     font-weight: bold;
+    text-shadow: 0 0 5px #5af2fd;
 }
 
-/* 3つの点（飾り） */
-.header-deco {
-    width: 30px;
-    height: 6px;
-    background: repeating-linear-gradient(90deg,
-            #5af2fd,
-            #5af2fd 2px,
-            transparent 2px,
-            transparent 4px);
+.panel-deco {
+    width: 50px;
+    height: 4px;
+    background: repeating-linear-gradient(90deg, #5af2fd, #5af2fd 2px, transparent 2px, transparent 5px);
 }
 
-/* テーブル本体のデザイン */
+/* アイコンエリア */
+.profile-icon-area {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #222;
+}
+
+.profile-icon-area img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #5af2fd;
+    box-shadow: 0 0 20px rgba(90, 242, 253, 0.5);
+    transition: all 0.3s ease;
+}
+
+.profile-icon-area img:hover {
+    box-shadow: 0 0 30px #5af2fd;
+    transform: scale(1.02);
+}
+
+/* 表と履歴のデザイン */
 .status-table {
     width: 100%;
     border-collapse: collapse;
-    /* 隙間をなくす */
-    font-family: 'Courier New', sans-serif;
-    /* 等幅フォントでデータっぽく */
 }
 
-/* 行（マウスを乗せると光る） */
-.status-table tr {
+.status-table th {
+    text-align: left;
+    color: #888;
+    padding: 15px 0;
     border-bottom: 1px solid #222;
-    /* 薄い区切り線 */
+    width: 30%;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.status-table td {
+    text-align: left;
+    color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+}
+
+.history-timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid rgba(90, 242, 253, 0.3);
+}
+
+.history-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.history-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border: 2px solid #5af2fd;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #5af2fd;
     transition: all 0.3s;
 }
 
-.status-table tr:hover {
-    background: rgba(90, 242, 253, 0.05);
-    /* うっすら水色に */
+.history-item:hover::before {
+    background: #5af2fd;
+    transform: scale(1.2);
 }
 
-/* 左側（項目名） */
-.status-table th {
-    padding: 25px 20px;
-    text-align: right;
-    /* 右寄せにして文字との距離を近づける */
-    width: 30%;
-    /* 幅を指定 */
-    color: #888;
-    /* 文字は暗めに */
+.history-date {
+    font-family: 'Orbitron', sans-serif;
+    color: #5af2fd;
     font-size: 14px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    vertical-align: top;
-    /* 上揃え */
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-/* 右側（中身） */
-.status-table td {
-    padding: 25px 20px;
-    text-align: left;
+.history-content h4 {
     color: #fff;
-    /* 文字は白くくっきり */
     font-size: 16px;
-    line-height: 1.6;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    /* 少し発光させる */
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-/* スマホ対応 */
-@media (max-width: 600px) {
+.history-content p {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.6;
+}
 
-    .status-table th,
-    .status-table td {
-        display: block;
-        /* 縦並びにする */
-        width: 100%;
-        text-align: left;
-        padding: 10px 20px;
-    }
-
-    .status-table th {
-        color: #5af2fd;
-        /* スマホでは項目名を水色に */
-        font-size: 12px;
-        padding-bottom: 0;
-    }
+.future .history-date {
+    animation: blink 1.5s infinite alternate;
 }
 
 /* Skills */

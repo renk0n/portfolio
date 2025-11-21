@@ -11,7 +11,7 @@
         <header class="header">
             <div class="container">
                 <div class="header-left">
-                    <div class="header-logo-text">Ren.</div>
+                    <div class="header-logo-text">Ren portfolio</div>
                 </div>
                 <nav class="header-right">
                     <a href="#top">Top</a>
@@ -32,39 +32,69 @@
     <div class="container">
         <h2>Profile</h2>
         
-        <div class="status-card">
-            <div class="card-header">
-                <span class="header-title">SYSTEM DATA</span>
-                <div class="header-deco"></div>
-            </div>
-            
-            <table class="status-table">
-                <tbody>
-                    <tr>
-                        <th>NAME</th>
-                        <td>Ren</td>
-                    </tr>
-                    <tr>
-                        <th>AFFILIATION</th>
-                        <td>大阪公立大学高専<br>知能情報コース</td>
-                    </tr>
-                    <tr>
-                        <th>SKILLS</th>
-                        <td>Python, HTML, CSS, C#</td>
-                    </tr>
-                    <tr>
-                        <th>HOBBY</th>
-                        <td>ゲーム開発 / 映画鑑賞  </td>
-                    </tr>
-                    <tr>
-                        <th>GOAL</th>
-                        <td>ユーザー体験を重視した<br>アプリケーション開発</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="tab-menu">
+            <button class="tab-btn active" onclick="openTab('system-panel')">SYSTEM DATA</button>
+            <button class="tab-btn" onclick="openTab('history-panel')">HISTORY LOG</button>
         </div>
 
+        <div class="tab-content-wrapper">
+            
+            <div id="system-panel" class="dashboard-panel tab-pane active">
+    <div class="panel-header">
+        <span class="panel-title">SYSTEM STATUS</span>
+        <div class="panel-deco"></div>
     </div>
+    
+    <div class="profile-icon-area">
+        <img src="image/レンコンがぞう.jpg" alt="Profile Icon"> </div>
+    
+    <table class="status-table">
+        <tbody>
+            <tr><th>NAME</th><td>Ren</td></tr>
+            <tr><th>AFFILIATION</th><td>大阪公立大学高専<br>知能情報コース</td></tr>
+            <tr><th>SKILLS</th><td>Python, HTML, CSS, C#</td></tr>
+            <tr><th>HOBBY</th><td>ゲーム開発 / 映画鑑賞</td></tr>
+        </tbody>
+    </table>
+</div>
+
+            <div id="history-panel" class="dashboard-panel tab-pane">
+                <div class="panel-header">
+                    <span class="panel-title">CHRONICLE</span>
+                    <div class="panel-deco"></div>
+                </div>
+                <div class="history-timeline">
+                    <div class="history-item">
+                        <div class="history-date">2024.04</div>
+                        <div class="history-content">
+                            <h4>大阪公立大学高専 入学</h4>
+                            <p>総合工学システム学科に入学。</p>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-date">2025.05</div>
+                        <div class="history-content">
+                            <h4>Python学習開始</h4>
+                            <p>google colaboratoryを使用して学習した.</p>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-date">2025.11</div>
+                        <div class="history-content">
+                            <h4>高専祭 展示アプリ開発</h4>
+                            <p>サッカーゲームを制作.</p>
+                        </div>
+                    </div>
+                    <div class="history-item future">
+                        <div class="history-date">NEXT...</div>
+                        <div class="history-content"><h4>さらなる技術向上へ</h4></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 </section>
             <section class="skills" id="skills">
     <div class="container">
@@ -240,5 +270,31 @@
             </div>
         </footer>
         <a href="#" class="back-to-top">↑</a>
+    
+    <script>
+    function openTab(tabName) {
+        // 1. すべてのパネルを隠す
+        var contents = document.getElementsByClassName("tab-pane");
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.remove("active");
+        }
+        
+        // 2. すべてのボタンの選択状態(active)を消す
+        var buttons = document.getElementsByClassName("tab-btn");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("active");
+        }
+        
+        // 3. クリックされたボタンに対応するパネルだけを表示する
+        document.getElementById(tabName).classList.add("active");
+        
+        // 4. クリックされたボタン自体を光らせる
+        // (event.currentTarget はクリックされた要素自身を指します)
+        event.currentTarget.classList.add("active");
+    }
+</script>
+
+
+    
     </body>
 </html>
