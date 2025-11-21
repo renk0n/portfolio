@@ -5,10 +5,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: #000000;
     color: #ffffff;
 }
+
 .container {
     max-width: 1200px;
     padding: 0 70px;
@@ -65,8 +67,8 @@ body {
 /* Main Visual */
 .main-visual {
     padding: 280px 0 200px;
-    background: linear-gradient(rgba(49, 49, 49, 0.7), rgba(49, 49, 49, 0.3)), 
-                url("image/スクリーンショット\ 2024-11-18\ 003417.png");
+    background: linear-gradient(rgba(49, 49, 49, 0.7), rgba(49, 49, 49, 0.3)),
+        url("image/スクリーンショット\ 2024-11-18\ 003417.png");
     background-size: cover;
     background-position: center;
     color: #f5f5f5;
@@ -74,15 +76,11 @@ body {
 }
 
 .top-title {
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     font-size: 80px;
-    text-shadow: 
-    0px 0px 7px #5af2fd,
-    0px 0px 10px #5af2fd,
-    0px 0px 21px #5af2fd,
-    0px 0px 42px #5af2fd,
-    0px 0px 82px #5af2fd;
-    color: #5af2fd
+    text-shadow: 0px 0px 7px #5af2fd, 0px 0px 10px #5af2fd, 0px 0px 21px #5af2fd,
+        0px 0px 42px #5af2fd, 0px 0px 82px #5af2fd;
+    color: #5af2fd;
 }
 
 /* Sections */
@@ -100,23 +98,67 @@ section h2 {
 /* Profile */
 /* Profile (文章形式のスタイル) */
 .profile-content {
-     max-width: 800px; /* 文章が横に長くなりすぎないように幅を制限 */
-    margin: 0 auto; /* 中央寄せ */
-    text-align: left; /* テキストは左寄せ */
-    line-height: 1.8; /* 行間を少し広げて読みやすく */
+    max-width: 800px;
+    /* 文章が横に長くなりすぎないように幅を制限 */
+    margin: 0 auto;
+    /* 中央寄せ */
+    text-align: left;
+    /* テキストは左寄せ */
+    line-height: 1.8;
+    /* 行間を少し広げて読みやすく */
 }
 
 .profile-greeting {
-    font-size: 22px; /* 最初の挨拶を少し大きく */
+    font-size: 22px;
+    /* 最初の挨拶を少し大きく */
     font-weight: bold;
-    text-align: center; /* 挨拶だけ中央寄せにしてもOK */
+    text-align: center;
+    /* 挨拶だけ中央寄せにしてもOK */
     margin-bottom: 25px;
 }
 
-.profile-text {
-    font-size: 18px; /* 本文のフォントサイズ */
-    color: #333; /* 文字色 */
-    margin-bottom: 20px; /* 段落ごとの間隔 */
+/* 黒背景用：ダーク・グラスモーフィズム */
+.profile-text-simple {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.8;
+
+    /* 👇 ここが変更点：黒いガラスのデザイン */
+    background: rgba(20, 20, 20, 0.6);
+    /* 黒を半透明にする */
+    backdrop-filter: blur(10px);
+    /* 背景をぼかす */
+
+    /* 👇 枠線を水色ネオンにする */
+    border: 1px solid #5af2fd;
+    /* 水色の枠線 */
+    box-shadow: 0 0 20px rgba(90, 242, 253, 0.2);
+    /* 水色のぼんやりした光 */
+
+    color: #fff;
+    /* 文字は白 */
+    border-radius: 20px;
+    padding: 40px;
+}
+
+/* マウスを乗せた時の動き */
+.profile-text-simple:hover {
+    transform: translateY(-5px);
+    /* ふわっと浮く */
+    box-shadow: 0 0 40px rgba(90, 242, 253, 0.6);
+    /* 光が強くなる！ */
+    background: rgba(20, 20, 20, 0.8);
+    /* 背景が少し濃くなる */
+}
+
+/* 強調したい文字（strongタグ）の色 */
+.profile-text-simple strong {
+    color: #5af2fd;
+    /* ここも水色ネオンに合わせる */
+    text-shadow: 0 0 5px #5af2fd;
+    /* 文字自体も少し光らせる */
 }
 
 /* Skills */
@@ -142,7 +184,7 @@ section h2 {
 
 .skills-card-inner,
 .products-card-inner {
-    background-color: #f8f9fa
+    background-color: #f8f9fa;
 }
 
 .skills-card-inner.animate,
@@ -152,7 +194,7 @@ section h2 {
 }
 
 .products-card-inner {
-    background-color: #f8f9fa
+    background-color: #f8f9fa;
 }
 
 .products-card-inner.animate {
@@ -184,7 +226,7 @@ section h2 {
 .skill-bar {
     height: 100%;
     background: linear-gradient(90deg, #007bff, #0056b3);
-    width: 100%; 
+    width: 100%;
     transition: width 1s ease-in-out;
     border-radius: 4px;
 }
