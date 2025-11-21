@@ -147,21 +147,23 @@ section h2 {
 /* Profile: タブ切り替えシステム（一体型・完全版） */
 
 /* タブボタンを並べるエリア */
+/* タブボタンを並べるエリア（修正版） */
 .tab-menu {
     display: flex;
     justify-content: flex-start;
-    /* 左寄せ（インデックス風） */
     gap: 5px;
-    /* タブ同士の隙間は少しだけ */
-    margin-bottom: 0;
-    /* 下の隙間をゼロにする（これでくっつける！） */
-    padding-left: 20px;
-    /* 左端に少し余裕を持たせる */
+
+    /* 👇 ここが修正ポイント！下のパネルと幅・位置を合わせる */
+    max-width: 800px;
+    margin: 0 auto;
+    /* 中央揃え */
+    padding-left: 0;
+    /* 左の隙間をなくして、パネルの端に合わせる */
+
     position: relative;
     z-index: 1;
-    /* 線の上に重ねるために必要 */
     top: 1px;
-    /* 1pxだけ下にずらして、下の線に重ねる */
+    /* 下の線に重ねる */
 }
 
 /* タブボタンのデザイン（未選択時） */
@@ -911,4 +913,22 @@ section h2 {
         bottom: 20px;
         right: 20px;
     }
+
+    /* Productsの画像をスマホ枠に収める */
+    .product-img-box {
+        width: 100%;
+        height: auto;
+        /* 高さは自動 */
+        aspect-ratio: 16 / 9;
+        /* 横長に固定 */
+    }
+
+    .product-img-box img,
+    .product-img-box video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* 枠に合わせてトリミング */
+    }
+
 }
