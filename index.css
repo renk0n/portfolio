@@ -493,48 +493,88 @@ section h2 {
 }
 
 /* Contact */
-.contact-content {
-    text-align: center;
+/* Contact: ネオン・コンタクトカード */
+
+.contact-card {
     max-width: 600px;
     margin: 0 auto;
+    background: rgba(20, 20, 20, 0.6);
+    /* 黒いガラス */
+    border: 1px solid #333;
+    border-top: 2px solid #5af2fd;
+    /* 上だけ水色ライン */
+    border-radius: 20px;
+    padding: 50px 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(90, 242, 253, 0.1);
 }
 
-.contact-text {
+/* メッセージテキスト */
+.contact-message {
     font-size: 18px;
-    margin-bottom: 30px;
-    color: #666;
+    color: #fff;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
-.contact-links {
+/* ボタンを横並びにするエリア */
+.contact-buttons {
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
+    /* スマホで狭くなったら縦に並ぶ */
 }
 
-.contact-link {
+/* ネオンボタンのデザイン */
+.contact-btn {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 15px 25px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
+    gap: 15px;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #5af2fd;
+    /* 水色の枠線 */
+    border-radius: 50px;
+    /* 丸いボタン */
     text-decoration: none;
-    color: #333;
-    transition: transform 0.3s, box-shadow 0.3s;
+    color: #5af2fd;
+    /* 文字色 */
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
-.contact-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.contact-link img {
+/* アイコンのサイズ調整 */
+.contact-icon img {
     width: 24px;
     height: 24px;
+    /* 👇 黒いアイコンを白く反転させる魔法 */
+    filter: invert(1);
+    transition: all 0.3s;
 }
 
-.email-icon {
+.email-text-icon {
     font-size: 24px;
+}
+
+/* マウスを乗せた時の動き */
+.contact-btn:hover {
+    background: #5af2fd;
+    /* 背景を水色に */
+    color: #000;
+    /* 文字を黒に */
+    box-shadow: 0 0 20px #5af2fd;
+    /* 強く発光！ */
+    transform: translateY(-5px);
+    /* 浮く */
+}
+
+/* マウスを乗せた時、アイコンの色も黒に戻す */
+.contact-btn:hover .contact-icon img {
+    filter: invert(0);
 }
 
 /* Back to Top Button */
