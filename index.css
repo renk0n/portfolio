@@ -613,3 +613,82 @@ section h2 {
     color: #e8e8e8;
     padding: 20px 0;
 }
+
+/* =========================================
+   スマホ用レスポンシブ設定 (画面幅768px以下)
+========================================= */
+@media screen and (max-width: 768px) {
+
+    /* コンテナの横幅の余白を狭くする */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* セクションの上下の余白を少し狭くする */
+    section {
+        padding: 60px 0;
+    }
+
+    /* 見出しの文字サイズを少し小さく */
+    section h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    /* ---------- Products (制作物) ---------- */
+    /* カードを1列にする */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* カード内のレイアウト調整 */
+    .product-card {
+        /* 念のため縦並びを強制 */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* 画像の高さを自動調整（見切れ防止） */
+    .product-img-box {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        /* 一般的な横長比率に固定 */
+    }
+
+    /* テキストを中央寄せにする */
+    .product-content {
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* ボタンも中央寄せ */
+    .product-action {
+        text-align: center;
+    }
+
+    /* ---------- Contact (お問い合わせ) ---------- */
+    .contact-card {
+        padding: 30px 20px;
+    }
+
+    /* メッセージの文字サイズ調整 */
+    .contact-message {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    /* ボタンを縦並びにする */
+    .contact-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* ボタンを横幅いっぱいに広げる */
+    .contact-btn {
+        width: 100%;
+        justify-content: center;
+        /* 文字とアイコンを中央揃え */
+        padding: 15px;
+    }
+}
