@@ -35,8 +35,31 @@ body {
     height: 100%;
 }
 
-.header-logo {
-    height: 40px;
+.header-logo-text {
+    font-size: 28px;
+    /* 文字の大きさ */
+    font-weight: bold;
+    /* 太文字 */
+    color: #5af2fd;
+    /* 水色ネオンカラー */
+    text-decoration: none;
+    /* 下線を消す */
+    font-family: 'Trebuchet MS', sans-serif;
+    /* カッコいいフォント */
+    letter-spacing: 2px;
+    /* 文字の間隔を少し空ける */
+
+    /* 👇 ほんのり光らせる */
+    text-shadow: 0 0 10px rgba(90, 242, 253, 0.5);
+    transition: all 0.3s;
+    cursor: default;
+}
+
+/* マウスを乗せた時に強く光る */
+.header-logo-text:hover {
+    text-shadow: 0 0 20px #5af2fd;
+    color: #fff;
+    /* 文字の中心を白くして発光感を出す */
 }
 
 .header-right {
@@ -92,143 +115,257 @@ section h2 {
     font-size: 36px;
     margin-bottom: 40px;
     text-align: center;
-    color: #333;
+    color: #5af2fd;
+    text-shadow: 0 0 10px #5af2fd;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 /* Profile */
-/* Profile (文章形式のスタイル) */
-.profile-content {
-    max-width: 800px;
-    /* 文章が横に長くなりすぎないように幅を制限 */
+/* Profile: サイバー・ステータス表 */
+
+/* 表全体を囲むカード */
+.status-card {
+    max-width: 700px;
     margin: 0 auto;
-    /* 中央寄せ */
-    text-align: left;
-    /* テキストは左寄せ */
-    line-height: 1.8;
-    /* 行間を少し広げて読みやすく */
+    background: rgba(10, 10, 10, 0.8);
+    /* 半透明の黒 */
+    border: 1px solid #333;
+    border-top: 2px solid #5af2fd;
+    /* 上だけ水色のアクセント */
+    box-shadow: 0 0 20px rgba(90, 242, 253, 0.1);
+    backdrop-filter: blur(5px);
 }
 
-.profile-greeting {
-    font-size: 22px;
-    /* 最初の挨拶を少し大きく */
-    font-weight: bold;
-    text-align: center;
-    /* 挨拶だけ中央寄せにしてもOK */
-    margin-bottom: 25px;
+/* カードの上部（飾り） */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(90, 242, 253, 0.1);
+    /* 薄い水色背景 */
+    border-bottom: 1px solid #333;
 }
 
-/* 黒背景用：ダーク・グラスモーフィズム */
-.profile-text-simple {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.8;
-
-    /* 👇 ここが変更点：黒いガラスのデザイン */
-    background: rgba(20, 20, 20, 0.6);
-    /* 黒を半透明にする */
-    backdrop-filter: blur(10px);
-    /* 背景をぼかす */
-
-    /* 👇 枠線を水色ネオンにする */
-    border: 1px solid #5af2fd;
-    /* 水色の枠線 */
-    box-shadow: 0 0 20px rgba(90, 242, 253, 0.2);
-    /* 水色のぼんやりした光 */
-
-    color: #fff;
-    /* 文字は白 */
-    border-radius: 20px;
-    padding: 40px;
-}
-
-/* マウスを乗せた時の動き */
-.profile-text-simple:hover {
-    transform: translateY(-5px);
-    /* ふわっと浮く */
-    box-shadow: 0 0 40px rgba(90, 242, 253, 0.6);
-    /* 光が強くなる！ */
-    background: rgba(20, 20, 20, 0.8);
-    /* 背景が少し濃くなる */
-}
-
-/* 強調したい文字（strongタグ）の色 */
-.profile-text-simple strong {
+.header-title {
+    font-size: 12px;
+    letter-spacing: 2px;
     color: #5af2fd;
-    /* ここも水色ネオンに合わせる */
-    text-shadow: 0 0 5px #5af2fd;
-    /* 文字自体も少し光らせる */
+    font-weight: bold;
+}
+
+/* 3つの点（飾り） */
+.header-deco {
+    width: 30px;
+    height: 6px;
+    background: repeating-linear-gradient(90deg,
+            #5af2fd,
+            #5af2fd 2px,
+            transparent 2px,
+            transparent 4px);
+}
+
+/* テーブル本体のデザイン */
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* 隙間をなくす */
+    font-family: 'Courier New', sans-serif;
+    /* 等幅フォントでデータっぽく */
+}
+
+/* 行（マウスを乗せると光る） */
+.status-table tr {
+    border-bottom: 1px solid #222;
+    /* 薄い区切り線 */
+    transition: all 0.3s;
+}
+
+.status-table tr:hover {
+    background: rgba(90, 242, 253, 0.05);
+    /* うっすら水色に */
+}
+
+/* 左側（項目名） */
+.status-table th {
+    padding: 25px 20px;
+    text-align: right;
+    /* 右寄せにして文字との距離を近づける */
+    width: 30%;
+    /* 幅を指定 */
+    color: #888;
+    /* 文字は暗めに */
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    vertical-align: top;
+    /* 上揃え */
+}
+
+/* 右側（中身） */
+.status-table td {
+    padding: 25px 20px;
+    text-align: left;
+    color: #fff;
+    /* 文字は白くくっきり */
+    font-size: 16px;
+    line-height: 1.6;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    /* 少し発光させる */
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+
+    .status-table th,
+    .status-table td {
+        display: block;
+        /* 縦並びにする */
+        width: 100%;
+        text-align: left;
+        padding: 10px 20px;
+    }
+
+    .status-table th {
+        color: #5af2fd;
+        /* スマホでは項目名を水色に */
+        font-size: 12px;
+        padding-bottom: 0;
+    }
 }
 
 /* Skills */
-.skills-card-wrapper {
+/* Skills: サイバー・インベントリカード */
+
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* PC画面では2列 (横に2つ並ぶ) */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    /* カード同士の間隔 */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* カード本体 */
+.skill-tech-card {
+    background: rgba(20, 20, 20, 0.6);
+    /* 黒いガラス */
+    border: 1px solid #333;
+    /* 細い枠線 */
+    border-radius: 12px;
+    /* 角丸 */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    /* 上下中央揃え */
     gap: 20px;
+    backdrop-filter: blur(5px);
+    /* すりガラス効果 */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.skills-card-inner {
-    padding: 25px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
 
-.skills-card-inner:hover {
+
+/* マウスを乗せた時のカードの動き */
+.skill-tech-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* 少し上に動く */
+    border-color: #5af2fd;
+    /* 枠線が水色に */
+    box-shadow: 0 0 20px rgba(90, 242, 253, 0.15);
+    /* 全体が発光 */
+    background: rgba(20, 20, 20, 0.8);
 }
 
-.skills-card-inner,
-.products-card-inner {
-    background-color: #f8f9fa;
+
+/* アイコンが入る箱 */
+.skill-icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #444;
 }
 
-.skills-card-inner.animate,
-.products-card-inner.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.products-card-inner {
-    background-color: #f8f9fa;
-}
-
-.products-card-inner.animate {
-    transform: translateY(0);
-}
-
-.skills-image {
+.skill-icon-box img {
     width: 100%;
-    height: 80px;
+    height: 100%;
     object-fit: contain;
-    margin-bottom: 15px;
 }
 
-.skills-title {
-    font-size: 16px;
+/* 右側のデータエリア */
+.skill-data {
+    flex-grow: 1;
+    /* 残りの幅いっぱいに広がる */
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.skill-name {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+}
+
+.skill-per {
+    color: #5af2fd;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+    font-family: monospace;
+    /* 数字っぽいフォント */
 }
 
-.skill-level {
+/* バーの背景（暗い部分） */
+.skill-bar-bg {
     width: 100%;
     height: 8px;
-    background-color: #e0e0e0;
+    background: #333;
     border-radius: 4px;
     overflow: hidden;
 }
 
-.skill-bar {
+/* バーの中身（光る部分） */
+.skill-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #007bff, #0056b3);
-    width: 100%;
-    transition: width 1s ease-in-out;
+    background: #5af2fd;
+    /* 水色ネオン */
     border-radius: 4px;
+    box-shadow: 0 0 10px #5af2fd;
+    /* バー自体を光らせる */
+
+    /* アニメーション */
+    width: 0;
+    /* 最初は0 */
+    animation: fillBar 1.5s ease-out forwards;
+    /* 1.5秒かけて伸びる */
+}
+
+/* バーが伸びるアニメーション定義 */
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+
+    /* to は HTMLに書いた style="width: 80%" まで伸びる */
+}
+
+/* スマホ対応（1列にする） */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Products */

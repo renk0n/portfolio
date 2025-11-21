@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>My Portfolio</title>
+        <title>Ren Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="responsive.css">
@@ -11,7 +11,7 @@
         <header class="header">
             <div class="container">
                 <div class="header-left">
-                    <img class="header-logo" src="image/スクリーンショット 2024-11-21 004749.png" alt="My Portfolio">
+                    <div class="header-logo-text">Ren.</div>
                 </div>
                 <nav class="header-right">
                     <a href="#top">Top</a>
@@ -25,147 +25,146 @@
         <main>
             <section class="main-visual" id="top">
                 <div class="container">
-                    <h1 class="top-title">れんのポートフォリオ</h1>
+                    <h1 class="top-title">Ren portfolio</h1>
                 </div>
             </section>
             <section class="profile" id="profile">
     <div class="container">
         <h2>Profile</h2>
         
-        <div class="bento-grid">
-            <div class="bento-card photo-card">
-                <img src="image/logo/github_black_logo_icon_147128.png" alt="Icon">
+        <div class="status-card">
+            <div class="card-header">
+                <span class="header-title">SYSTEM DATA</span>
+                <div class="header-deco"></div>
             </div>
-
-            <div class="bento-card name-card">
-                <span class="label">Name</span>
-                <h3>Sho</h3>
-                <p class="job-title">Student / Developer</p>
-            </div>
-
-            <div class="bento-card bio-card">
-                <span class="label">About</span>
-                <p>
-                    デザインと機能性の両立を目指すエンジニア。<br>
-                    シンプルで使いやすいUIを好みます。<br>
-                    大阪公立大学高専にて情報工学を専攻中。
-                </p>
-            </div>
+            
+            <table class="status-table">
+                <tbody>
+                    <tr>
+                        <th>NAME</th>
+                        <td>Ren</td>
+                    </tr>
+                    <tr>
+                        <th>AFFILIATION</th>
+                        <td>大阪公立大学高専<br>知能情報コース</td>
+                    </tr>
+                    <tr>
+                        <th>SKILLS</th>
+                        <td>Python, HTML, CSS, C#</td>
+                    </tr>
+                    <tr>
+                        <th>HOBBY</th>
+                        <td>ゲーム開発 / 映画鑑賞  </td>
+                    </tr>
+                    <tr>
+                        <th>GOAL</th>
+                        <td>ユーザー体験を重視した<br>アプリケーション開発</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
     </div>
 </section>
             <section class="skills" id="skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <div class="skills-card-wrapper">
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/file_type_python_icon_130221.png" alt="Python">
-                            <h3 class="skills-title">Python</h3>
-                            <div class="skill-level">
-                                <div class="skill-bar" data-level="80"></div>
-                            </div>
-                        </div>
+    <div class="container">
+        <h2>Skills</h2>
+        
+        <div class="skills-grid">
+            
+            <div class="skill-tech-card">
+                <div class="skill-icon-box">
+                    <img src="image/file_type_python_icon_130221.png" alt="Python">
+                </div>
+                <div class="skill-data">
+                    <div class="skill-header">
+                        <h3 class="skill-name">Python</h3>
+                        <span class="skill-per">80%</span>
                     </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/file_type_kotlin_icon_130487.png" alt="Kotlin">
-                            <h3 class="skills-title">Kotlin</h3>
-                            <div class="skill-level">
-                                <div class="skill-bar" data-level="70"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/emblem-c-plus-programming-language-600nw-1669056601 (1).png" alt="C++">
-                            <h3 class="skills-title">C++</h3>
-                            <div class="skill-level">
-                                <div class="skill-bar" data-level="60"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/file_type_html_icon_130541.png" alt="HTML">
-                            <h3 class="skills-title">HTML</h3>
-                            <div class="skill-level">
-                                <div class="skill-bar" data-level="85"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/file_type_css_icon_130661.png" alt="CSS">
-                            <h3 class="skills-title">CSS</h3>
-                            <div class="skill-level">
-                                <div class="skill-bar" data-level="75"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/file_type_vscode_icon_130084.png" alt="VSCode">
-                            <h3 class="skills-title">Visual Studio Code</h3>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/github_black_logo_icon_147128.png" alt="GitHub">
-                            <h3 class="skills-title">GitHub</h3>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/android-studio-icon.png" alt="AndroidStudio">
-                            <h3 class="skills-title">Android Studio</h3>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/HeidiSQL Logo.png" alt="HeidiSQL">
-                            <h3 class="skills-title">HeidiSQL</h3>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/cisco-logo-0.png" alt="CISCO">
-                            <h3 class="skills-title">Cisco Packet Tracer</h3>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/teraterm.png" alt="TeraTerm">
-                            <h3 class="skills-title">TeraTerm</h3>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/pngkit_whatsup-icon-png_3657626.png" alt="WireShark">
-                            <h3 class="skills-title">WireShark</h3>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/arduino-logo-0.png" alt="Arduino">
-                            <h3 class="skills-title">Arduino IDE</h3>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/microbit Logo-600x315.png" alt="micro:bit">
-                            <h3 class="skills-title">micro:bit</h3>
-                        </div>
-                    </div>
-                    <div class="skills-card">
-                        <div class="skills-card-inner">
-                            <img class="skills-image" src="image/logo/R.png" alt="TINKERCAD">
-                            <h3 class="skills-title">TINKERCAD</h3>
-                        </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 80%;"></div>
                     </div>
                 </div>
             </div>
-            </section>
+
+            <div class="skill-tech-card">
+                <div class="skill-icon-box">
+                    <img src="image/file_type_html_icon_130541.png" alt="HTML">
+                </div>
+                <div class="skill-data">
+                    <div class="skill-header">
+                        <h3 class="skill-name">HTML</h3>
+                        <span class="skill-per">90%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-tech-card">
+                <div class="skill-icon-box">
+                    <img src="image/file_type_css_icon_130661.png" alt="CSS">
+                </div>
+                <div class="skill-data">
+                    <div class="skill-header">
+                        <h3 class="skill-name">CSS</h3>
+                        <span class="skill-per">85%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-tech-card">
+                <div class="skill-icon-box">
+                    <img src="image/c-sharp.png" alt="C#">
+                </div>
+                <div class="skill-data">
+                    <div class="skill-header">
+                        <h3 class="skill-name">C#</h3>
+                        <span class="skill-per">60%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-tech-card">
+                <div class="skill-icon-box">
+                    <img src="image/icons8-github-64.png" alt="GitHub">
+                </div>
+                <div class="skill-data">
+                    <div class="skill-header">
+                        <h3 class="skill-name">GitHub</h3>
+                        <span class="skill-per">75%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-tech-card">
+                <div class="skill-icon-box">
+                    <img src="image/file_type_vscode_icon_130084.png" alt="VS Code">
+                </div>
+                <div class="skill-data">
+                    <div class="skill-header">
+                        <h3 class="skill-name">VS Code</h3>
+                        <span class="skill-per">80%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
             <section class="products" id="products">
             <div class="container">
                 <h2>Products</h2>
