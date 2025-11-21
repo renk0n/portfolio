@@ -136,9 +136,7 @@ section h2 {
 
 .skills-card-inner,
 .products-card-inner {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    background-color: #f8f9fa
 }
 
 .skills-card-inner.animate,
@@ -148,8 +146,7 @@ section h2 {
 }
 
 .products-card-inner {
-    transform: translateY(40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    background-color: #f8f9fa
 }
 
 .products-card-inner.animate {
@@ -181,7 +178,7 @@ section h2 {
 .skill-bar {
     height: 100%;
     background: linear-gradient(90deg, #007bff, #0056b3);
-    width: 0;
+    width: 100%; 
     transition: width 1s ease-in-out;
     border-radius: 4px;
 }
@@ -302,8 +299,8 @@ img:not(.lazy) {
     border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     transition: all 0.3s ease;
     z-index: 1000;
 }
