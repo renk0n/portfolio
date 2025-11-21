@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+/* index.css の一番上に追加 */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #000000;
     color: #ffffff;
@@ -690,5 +695,70 @@ section h2 {
         justify-content: center;
         /* 文字とアイコンを中央揃え */
         padding: 15px;
+    }
+}
+
+/* ========== ここからトップに戻るボタンの新しい設定 ========== */
+.back-to-top {
+    /* 1. 場所を決める */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    /* 必ず一番手前にする */
+
+    /* 2. 形と色（水色ネオン） */
+    width: 50px;
+    height: 50px;
+    background: rgba(20, 20, 20, 0.8);
+    /* 黒いガラス */
+    border: 1px solid #5af2fd;
+    /* 水色の枠 */
+    border-radius: 50%;
+    /* まんまるにする */
+    backdrop-filter: blur(5px);
+    /* すりガラス */
+    box-shadow: 0 0 15px rgba(90, 242, 253, 0.5);
+    /* 光らせる */
+
+    /* 3. 矢印の設定 */
+    color: #5af2fd;
+    font-size: 28px;
+    text-decoration: none;
+    /* 下線を消す */
+
+    /* 4. 矢印をど真ん中に持ってくる（ズレ解消のキモ） */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 5. なめらかに動く */
+    transition: all 0.3s ease;
+
+    /* 6. 余計な隙間をリセット */
+    margin: 0;
+    padding: 0;
+}
+
+/* マウスを乗せた時 */
+.back-to-top:hover {
+    background: #5af2fd;
+    /* 背景を水色に */
+    color: #000;
+    /* 矢印を黒に */
+    box-shadow: 0 0 30px #5af2fd;
+    /* 強く光る！ */
+    transform: translateY(-5px);
+    /* 浮く */
+}
+
+/* スマホの時は少し小さく */
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
     }
 }
