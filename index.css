@@ -6,8 +6,8 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #f0f8ff;
-    color: #333;
+    background-color: #000000;
+    color: #ffffff;
 }
 .container {
     max-width: 1200px;
@@ -20,7 +20,7 @@ body {
     height: 56px;
     width: 100%;
     box-shadow: 0 0 10px #ddd;
-    background-color: #000;
+    background-color: #242424;
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -321,7 +321,7 @@ img:not(.lazy) {
 /* Footer */
 .footer {
     height: 120px;
-    background-color: #2f3a44;
+    background-color: #252525;
     color: #e8e8e8;
     padding: 20px 0;
 }
