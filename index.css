@@ -76,7 +76,13 @@ body {
 .top-title {
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 80px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 
+    0px 0px 7px #5af2fd,
+    0px 0px 10px #5af2fd,
+    0px 0px 21px #5af2fd,
+    0px 0px 42px #5af2fd,
+    0px 0px 82px #5af2fd;
+    color: #5af2fd
 }
 
 /* Sections */
